@@ -1,3 +1,4 @@
+print("from wsgi.py")
 """
 WSGI config for flipcart project.
 

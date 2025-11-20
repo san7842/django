@@ -1,3 +1,5 @@
+
+print("from setting.py")
 """
 Django settings for flipcart project.
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'app',
 ]
 
 MIDDLEWARE = [
