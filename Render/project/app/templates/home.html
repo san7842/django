@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>HomePage</title>
+{% endblock title %}
+
+{% block css %}
+    
+<link href="{%  static 'css/home.css' %}" rel="stylesheet" >
+{% endblock css %}
 {% block content %}
 This is Home Page
+
+<h1 id="demo"> welcome to cybrom</h1>
+<img id="img" src="{% static 'image/img1.jpg' %}">
 {% endblock content %}
