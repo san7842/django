@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+
+<title>Register page</title>
+ {% endblock title %}
+
+ {% block css %}
+
+
+
+{% endblock css %}
+
+{% block content %}
+<h3>Register form</h3>
+
+<form action="{% url 'registerdata' %}" method="POST">
+    {% csrf_token %}
+    Name <input type="text" name="name">
+    <br>
+    <br>
+     Email <input type="email" name="Email">
+     <br>
+    <br>
+      Contact <input type="number" name="Contact">
+      <br>
+      <br>
+     Details<textarea name="Details"></textarea>
+    <br>
+    <br>
+    <input type="submit" value="Register">
+</form>
+{% endblock content %}
