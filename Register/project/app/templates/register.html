@@ -13,20 +13,21 @@
 {% block content %}
 <h3>Register form</h3>
 
-<form action="{% url 'registerdata' %}" method="POST">
+<form action="{% url 'registerdata' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     Name <input type="text" name="name">
     <br>
     <br>
      Email <input type="email" name="Email">
      <br>
-    <br>
+     <br>
       Contact <input type="number" name="Contact">
       <br>
       <br>
      Details<textarea name="Details"></textarea>
     <br>
     <br>
+    Image:<input type="file" name="image">
     <input type="submit" value="Register">
 </form>
-{% endblock content %}
+{% endblock content %}   
