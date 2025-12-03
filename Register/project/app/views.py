@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Student
 
 # Create your views here.
 def landing(req):
@@ -18,3 +19,17 @@ def registerdata(req):
      d=req.POST.get('details')
      i=req.FILES.get('image')
      print(n,e,c,d,i)
+     Student.objects.create(name=n,email=e,contact=c,details=d,image=i)
+    #  data=Student.objects.all()
+    #  return render(req,'data.html',{'key':data})
+def stu_data(req):
+    #  data=Student.objects.filter(name='Mr. Sandeep Sahu',email='sandeep@gmail.com')
+    #  print(data)
+    #  data=Student.objects.exclude(name='Mr. Sandeep Sahu')
+    #  data=Student.objects.order_by('name')
+    #  data=Student.objects.order_by('-name')
+    #  data=Student.objects.order_by('-name')
+    #  data=datas.reverse()
+    #  data=Student.objects.all()[:5]
+     data=(((Student.objects.all()).reverse()[:5])).reverse()
+     return render(req,'data.html',{'key':data})

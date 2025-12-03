@@ -7,3 +7,8 @@ class Student(models.Model):
     contact=models.IntegerField()
     details=models.CharField(max_length=100)
     image=models.ImageField(upload_to='image/')
+
+    def __str__(self):
+        return self.name +" "+self.email
+    # def __str__(self):
+    #     return str(self.contact)
