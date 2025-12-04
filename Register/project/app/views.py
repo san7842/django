@@ -31,5 +31,11 @@ def stu_data(req):
     #  data=Student.objects.order_by('-name')
     #  data=datas.reverse()
     #  data=Student.objects.all()[:5]
-     data=(((Student.objects.all()).reverse()[:5])).reverse()
+    #  data=(((Student.objects.all()).reverse()[:5])).reverse()
+    #  data=Student.objects.get(id=1)
+    #  data=Student.objects.get(name='Mr. Sandeep Sahu')
+    #  data=Student.objects.first()
+    #  data=Student.objects.last()
+     data=Student.objects.bulk_create([Student(name='rahul',email='rahul@gmail.com', contact='965847895',details='hello rahul')])
+
      return render(req,'data.html',{'key':data})
