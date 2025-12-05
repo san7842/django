@@ -1,0 +1,20 @@
+
+
+
+<form action="{% url 'registerdata' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    Name <input type="text" name="Name">
+    <br>
+    <br>
+     Email <input type="email" name="Email">
+     <br>
+     <br>
+      Contact <input type="number" name="Contact">
+      <br>
+      <br>
+     Details<textarea name="Details"></textarea>
+    <br>
+    <br>
+    Image:<input type="file" name="Image">
+    <input type="submit" value="Register">
+</form>
