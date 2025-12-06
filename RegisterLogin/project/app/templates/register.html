@@ -1,6 +1,6 @@
 
 
-
+{{msg}}
 <form action="{% url 'registerdata' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     Name <input type="text" name="Name">
@@ -13,6 +13,11 @@
       <br>
       <br>
      Details<textarea name="Details"></textarea>
+    <br>
+    <br>
+    Password:<input type="password" name="Password">
+    <br>
+    Comfirm Password:<input type="password" name="Cpassword">
     <br>
     <br>
     Image:<input type="file" name="Image">
