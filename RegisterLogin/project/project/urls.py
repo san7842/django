@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',landing,name='landing'),
     path('register/',register,name='register'),
-    path('registerdata/',registerdata,name='registerdata')
+    path('registerdata/',registerdata,name='registerdata'),
+    path('login/',login,name='login'),
+     path('logindata/',logindata,name='logindata')
 ]

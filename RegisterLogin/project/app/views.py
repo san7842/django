@@ -29,7 +29,34 @@ def registerdata(req):
                 msg='p & cp not match'
                 return render(req,'register.html',{'msg':msg})
 
+def login(req):
+    return render(req,'login.html')
 
+def logindata(req):
+    if req.method=='POST':
+        #print(req.POST)
+        e=req.POST.get('email')
+        p=req.POST.get('password')
+        #print(e,p)
+        user=Student.objects.filter(Email=e)  
+        if user:
+            userdata=Student.objects.get(Email=e)
+            un=userdata.Name
+            ue=userdata.Email
+            uc=userdata.Contact
+            ud=userdata.Details
+            ui=userdata.Image
+            up=userdata.Password
+            if up==p:
+                data={'name':un,'email':ue,'contact':uc,'details':ud,'image':ui,'password':up}
+                return render(req,'dashboard.html',{'data':data})
+            else:
+                msg="Email @Password not match"
+                return render(req,'login.html',{'msg':msg})
+            
+        else:
+            msg="Email not register "
+            return render(req,'register.html',{'msg':msg})
         # if user:
         #     msg="Email already exist"
         #     return render(req,'register.html',{'msg':msg})
