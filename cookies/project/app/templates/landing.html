@@ -1,7 +1,7 @@
 {{msg}}
 <a href="{% url 'set'  %}">set_cookie</a>
-<a href="">get_cookie</a>
-<a href="">delete_cookie</a>
+<a href="{% url 'get_data' %}">get_cookie</a>
+<a href="{% url 'delete_data' %}">delete_cookie</a>
 {% if set1 %}
    <form action="{% url 'set_data' %}" method="POST">
     {% csrf_token %}
@@ -17,4 +17,11 @@
     <br>
        <button type="submit">set_data</button>
    </form>
+   {% endif %}
+
+   {% if data %}
+   Name:{{data.name}}
+   Email:{{data.email}}
+   Password:{{data.password}}
+
    {% endif %}

@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',landing,name='landing'),
     path('set/',set1,name='set'),
-    path('set_data/',set_data,name='set_data')
+    path('set_data/',set_data,name='set_data'),
+    path('get_data/',get_data,name='get_data'),
+    path('delete_data/',delete_data,name='delete_data')
 ]
