@@ -83,12 +83,24 @@ def dashboard(req):
             user=Student.objects.filter(Email=e)
             if user:
                  userdata=Student.objects.get(Email=e)
-                 if p==userdata.password:
-                      data=('name'=n,'email'=e,'contact'=c,'detail'=d,'image'=i,'password'=p)
+                 if p==userdata.Password:
+                      data={'name':n,'email':e,'contact':c,'details':d,'image':i}
                       return render(req,'dashboard.html',{'data':data})
                  else:
                       return redirect('login')
                  
             else:
                  return redirect('login')
+def forget_password(req):
+     return render(req,'forget.html')
+
+
+def send_otp(req):
+     if req.method=='POST':
+          e=req.POST.get('email')
+          otp=random.randint(111111,999999)
+          req.session['email'],req.session['otp']=e,otp
+          send_mail('subject',f'generate OTP for django app is {otp}','sandeep536@gmail.com'),[e]
+          return render(req,'reset.html')
+
 

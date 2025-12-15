@@ -25,5 +25,7 @@ urlpatterns = [
     path('registerdata/',registerdata,name='registerdata'),
     path('login/',login,name='login'),
     path('logindata/',logindata,name='logindata'),
-    path('dashboard/',dashboard,name='dashboard')
+    path('dashboard/',dashboard,name='dashboard'),
+    path('forget_password',forget_password,name='forget_password'),
+    path('send_otp/',send_otp,name='send_otp')
 ]
