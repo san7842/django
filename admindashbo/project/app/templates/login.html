@@ -1,7 +1,12 @@
-<form>
-    Name:<input type="text" name="name">
-    Email:<input type="email" name="email">
-    Contact:<input type="number" name="number">
-    Salary:<input type="text" name="salary">
-    Position:<input type="text" name="position">
+<form action="{% url 'login_data' %}" method='POST'>
+{% csrf_token %}
+ Email <input type="email" name="email">
+ <br>
+ <br>
+ Password:<input type="password" name="password">
+ <br>
+ <button type="submit" value="login">submit</button>
+ <br>
+<a href="{% url 'forget' %}">forget_password</a>
 </form>
+<!-- sluge -->
