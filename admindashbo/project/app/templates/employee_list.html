@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Table>
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Salary</th>
+            <th>Position</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        
+            {% for emp in employees %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.contact}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.position}}</td>
+                <td><button type="submit"><a href="{% url 'edit' pk=emp.id %}">Edit</a></button></td>
+                <td><a href="{% url 'delete' pk=emp.id %}"><button type="submit">Delete</button></a></td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>No employee found</td>
+            </tr>
+    </Table>
+</body>
+</html>
