@@ -1,0 +1,12 @@
+hello...................
+<img src="{% static 'image/.jpg' %}" alt=" " srcset="">
+<video src ="{% static 'video/.mp4%}" controles></video>
+<form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+Name:<input type="text" name="name" id="">
+Image:<input type="file" name="image" accept=".jpeg" id="">
+Video:<input type="file" name="video" accept=".mp4" id="">
+Audio:<input type="file" name="audio" accept=".mp3" id="">
+Document:<input type="file" name="doc" accept="pdf" id="">
+<input type="submit" value="Register">
+</form>
