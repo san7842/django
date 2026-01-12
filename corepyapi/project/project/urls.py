@@ -21,5 +21,5 @@ from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/',movies_list),
-    # path('details/<int:pk>/',movies_details)
+    path('movies_details/<int:pk>/',movies_details)
 ]
